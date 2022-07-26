@@ -13,11 +13,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.example.reeceaddressbook.dao.CustomerDetailsRepository;
 
 @SpringBootTest(classes=CustomerDetailsService.class)
-public class CustomerDetailsServiceTest1 {
+public class CustomerDetailsServiceIntegrationTest {
 
 	@Mock
 	private CustomerDetailsRepository cdRepo;
-
+	
 	@InjectMocks // auto inject customerDetailsRepository
 	private CustomerDetailsService cdService = new CustomerDetailsServiceImpl();
 
