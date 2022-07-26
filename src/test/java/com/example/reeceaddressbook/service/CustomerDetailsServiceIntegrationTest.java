@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
 
 import com.example.reeceaddressbook.dao.CustomerDetailsRepository;
 
@@ -29,7 +30,7 @@ public class CustomerDetailsServiceIntegrationTest {
 	@DisplayName("Test Mock customerDetailsService + customerDetailsRepository")
 	@Test
 	void testGet() {
-		assertEquals("Hello Mockito From Repository", cdService.findAll());
-	}
+		 assertEquals(HttpStatus.OK, cdService.findAll().getStatusCode());
 
+	}
 }
